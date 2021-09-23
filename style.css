@@ -32,8 +32,8 @@
 /* ::-webkit-validation-bubble */
 .list-container {
   display: flex;
-  background-color: rgb(255, 255, 255);
-  height: 50rem;
+  /* background-color: rgb(255, 255, 255); */
+  height: 10rem;
   width: 100%;
   flex-direction: column;
   align-self: center;
@@ -94,17 +94,41 @@ input {
   margin-top: 1rem;
 }
 
-.paragraph {
+.p {
   height: 2rem;
   display: flex;
-  border-bottom: 0.5px solid rgb(190, 188, 188);
+  /* border-bottom: 0.5px solid rgb(190, 188, 188); */
   padding-left: 2rem;
   align-items: center;
   font-size: 1.5rem;
   /* background-color: black; */
   transition: 0.2;
 }
-.paragraph:hover {
+.p:hover {
   background-color: rgb(220, 226, 250);
   opacity: 50%;
+}
+
+.orice {
+  display: flex;
+  height: 2rem;
+  /* background-color: red; */
+  justify-content: space-between;
+  padding-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.btn-style {
+  display: flex;
+  background-color: white;
+  width: 5rem;
+  /* justify-content: space-between; */
+}
+
+.allB {
+  display: flex;
+  /* background-color: black; */
+  width: 15rem;
+  justify-content: space-evenly;
 }
