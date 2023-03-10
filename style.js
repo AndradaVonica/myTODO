@@ -28,6 +28,8 @@
 const addButtonItem = document.getElementById("addButton");
 const listContainer = document.getElementById("listBody");
 const inputField = document.getElementById("inputTextField");
+const complete = document.getElementById("complete");
+const uncomplete = document.getElementById("uncomplete");
 console.log("this for window", this);
 let todoText = "";
 
@@ -43,6 +45,10 @@ let todoText = "";
 
 // addToDo should accept a 'text' param from 'todos' array
 // hint: add another param: 'filter: true/false' and check when you set paragraph.innerText if it comes from filter button or 'add/enter'
+
+const todos = [];
+let todoId = 0;
+
 function addToDo() {
   const paragraph = document.createElement("p");
   const input = document.createElement("input");
@@ -84,6 +90,15 @@ function addToDo() {
   div.appendChild(btn);
   div.appendChild(del);
   div.appendChild(allBtns);
+
+  div.setAttribute("id", todoId);
+  todos.push({
+    id: todoId,
+    text: inputField.value,
+    completed: false,
+  });
+  console.log(todos);
+  todoId++;
   allBtns.appendChild(del);
   allBtns.appendChild(btn);
   listContainer.appendChild(div);
@@ -93,6 +108,7 @@ function addToDo() {
     console.log("this foe paragraf", this);
     // set completed: true/false (use paragraph.id)
     const decorationType = this.style.textDecoration;
+    console.log(div.id);
     if (decorationType === "line-through") {
       this.style.textDecoration = "none";
     } else {
@@ -123,6 +139,7 @@ function addToDo() {
 
   todoText = "";
 }
+complete.addEventListener("click", function () {});
 
 inputField.addEventListener("change", function (event) {
   todoText = event.target.value;
@@ -141,12 +158,18 @@ inputField.addEventListener("keyup", function (event) {
   //   return true;
   // }
 });
+
 addButtonItem.addEventListener("click", function () {
   if (!todoText) return;
-  // console.log("this for add buttn ", this);
-  addToDo();
+  console.log("this for add buttn ", this);
 });
 
+// function addElementArr() {
+//   array[a] = document.getElementById(inputField).value;
+//   console.log("Element: " + array[a] + " Added at index " + a);
+//   x++;
+//   document.getElementById(inputField).value = "";
+// }
 ///////
 // function isEmpty() {
 //   if ((document.forms["form1"]["input1"] = "")) {

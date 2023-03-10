@@ -83,7 +83,7 @@ input {
 .button {
   display: flex;
   height: 2rem;
-  width: 4rem;
+  width: 5rem;
   justify-content: center;
   align-items: center;
   align-self: center;
